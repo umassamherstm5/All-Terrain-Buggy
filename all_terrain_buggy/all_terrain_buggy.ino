@@ -113,6 +113,7 @@ void loop() {
 
     if(sig1 > 1560) {
       Serial.println("FORWARD");  
+      
       // set driver to CLOCKWISE mode
       digitalWrite(AIN1, HIGH);
       digitalWrite(AIN2, LOW); 
@@ -125,15 +126,16 @@ void loop() {
       if(sig2 < 1000) sig2 = 1000;
   
       b_speed = map(sig1, 1560, 2000, 0, 255); 
-      offset  = map(sig2, 1500, 1000, 0, 100); 
+      offset  = map(sig2, 1500, 1000, 0, b_speed/2); 
       // to go RIGHT, left side faster than right side 
       a_speed = b_speed - offset; 
       analogWrite(PWMA, a_speed);
       analogWrite(PWMB, b_speed);  
     }
 
-    if(sig1 < 1500) {
-      Serial.println(BACKWARD); 
+    else if(sig1 < 1500) {
+      Serial.println("BACKWARD"); 
+      
       // set driver to COUNTER-CLOCKWISE mode
       digitalWrite(AIN1, LOW);
       digitalWrite(AIN2, HIGH); 
@@ -146,11 +148,26 @@ void loop() {
       if(sig2 < 1000) sig2 = 1000;
   
       b_speed = map(sig1, 1500, 1000, 0, 255); 
-      offset  = map(sig2, 1500, 1000, 0, 100);
+      offset  = map(sig2, 1500, 1000, 0, b_speed/2);
       // to go RIGHT, left side faster than right side 
       a_speed = b_speed - offset; 
       analogWrite(PWMA, a_speed);
       analogWrite(PWMB, b_speed);  
+    }
+
+    else {
+      Serial.println("SPIN");
+
+      // set driver to SPIN, both sides move opposite dirs
+      digitalWrite(AIN1, LOW);
+      digitalWrite(AIN2, HIGH); 
+      digitalWrite(BIN1, HIGH);
+      digitalWrite(BIN2, LOW);
+
+      // speed dependent solely on sig2 value
+      a_speed = map(sig2, 1500, 1000, 0, 255);
+      analogWrite(PWMA, a_speed);
+      analogWrite(PWMB, a_speed);   
     }
   }
 
@@ -172,14 +189,14 @@ void loop() {
       if(sig2 > 2000) sig2 = 2000; 
   
       a_speed = map(sig1, 1560, 2000, 0, 255); 
-      offset  = map(sig2, 1560, 2000, 0, 100); 
+      offset  = map(sig2, 1560, 2000, 0, a_speed/2); 
       // to go LEFT, right side faster than left
       b_speed = a_speed - offset; 
       analogWrite(PWMA, a_speed);
       analogWrite(PWMB, b_speed);  
     }
 
-    if(sig1 < 1500) {
+    else if(sig1 < 1500) {
       Serial.println("BACKWARD");  
       // set driver to COUNTER-CLOCKWISE mode
       digitalWrite(AIN1, LOW);
@@ -193,11 +210,26 @@ void loop() {
       if(sig2 > 2000) sig2 = 2000; 
   
       a_speed = map(sig1, 1500, 1000, 0, 255); 
-      offset  = map(sig2, 1560, 2000, 0, 100); 
+      offset  = map(sig2, 1560, 2000, 0, a_speed/2); 
       // to go LEFT, right side faster than left
       b_speed = a_speed - offset; 
       analogWrite(PWMA, a_speed);
       analogWrite(PWMB, b_speed);  
+    }
+
+    else {
+      Serial.println("SPIN");
+
+      // set driver to SPIN, both sides move opposite dirs
+      digitalWrite(AIN1, HIGH);
+      digitalWrite(AIN2, LOW); 
+      digitalWrite(BIN1, LOW);
+      digitalWrite(BIN2, HIGH);
+
+      // speed dependent solely on sig2 value
+      a_speed = map(sig2, 1560, 2000, 0, 255);
+      analogWrite(PWMA, a_speed);
+      analogWrite(PWMB, a_speed);   
     }
   }
 
