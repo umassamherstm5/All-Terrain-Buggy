@@ -8,7 +8,7 @@
 #define CHANNEL_1 5 // channel 1 of the controller
 #define CHANNEL_2 6 // channel 2 of the controller
 
-/* driver pins for TB6612*/
+/* driver pins for TB6612, A is right and B is left*/
 #define AIN1 2
 #define AIN2 3
 #define PWMA A1
@@ -23,13 +23,30 @@ int sig1 = 0; // CHANNEL_1 value
 int sig2 = 0; // CHANNEL_2 value
 int a_speed = 0; // speed of A side
 int b_speed = 0; // speed of B side
-int offset = 0;
+int offset = 0;  // speed difference for turning
 
 int getState(int sig1, int sig2); 
 
 void setup() {
-  pinMode(CHANNEL_1, INPUT); // set channel 1 to INPUT
-  pinMode(CHANNEL_2, INPUT); // set channel 2 to INPUT
+  // set RC channels to INPUT
+  pinMode(CHANNEL_1, INPUT); 
+  pinMode(CHANNEL_2, INPUT); 
+
+  // set driver pins to OUTPUT
+  pinMode(AIN1, OUTPUT); 
+  pinMode(AIN2, OUTPUT); 
+  pinMode(BIN1, OUTPUT); 
+  pinMode(BIN2, OUTPUT); 
+  pinMode(PWMA, OUTPUT); 
+  pinMode(PWMB, OUTPUT); 
+
+  Serial.begin(9600); // start serial port 
+}
+
+void loop() {
+  // get signal values from receiver 
+  sig1 = pulseIn(CHANNEL_1, HIGH);
+  sig2 = pulseIn(CHANNEL_2, HIGH);
 
   if(DEBUG == 1) {
     // print signal values
@@ -37,13 +54,6 @@ void setup() {
     Serial.print(" ");
     Serial.println(sig2);    
   }
-
-  Serial.begin(9600); // start serial port 
-}
-
-void loop() {
-  sig1 = pulseIn(CHANNEL_1, HIGH);
-  sig2 = pulseIn(CHANNEL_2, HIGH);
 
   // states: OFF = 0, FORWARD = 1, BACKWARD = 2, LEFT = 3, RIGHT = 4 
   if(((sig1 < 1560) && (sig1 > 1500)) && ((sig2 < 1560) && (sig2 > 1500))) {
@@ -69,9 +79,10 @@ void loop() {
 
     // limit sig1 values for speed
     if(sig1 > 2000) sig1 = 2000; 
-    if(sig1 < 1000) sig1 = 1000;
-    
-    a_speed = map(sig1, 1000, 2000, 0, 255); 
+
+    // get speed proportional to sig1 in FORWARD state
+    // the higher the sig1 val, the higher the speed
+    a_speed = map(sig1, 1560, 2000, 0, 255); 
     analogWrite(PWMA, a_speed);
     analogWrite(PWMB, a_speed); 
   }
@@ -87,21 +98,22 @@ void loop() {
     digitalWrite(BIN2, HIGH); 
 
     // limit sig1 values for speed
-    if(sig1 > 2000) sig1 = 2000; 
     if(sig1 < 1000) sig1 = 1000;
 
-    a_speed = map(sig1, 1000, 2000, 0, 255); 
+    // get speed proportional to sig1 in BACKWARD state
+    // the lower the sig1 val, the higher the speed
+    a_speed = map(sig1, 1500, 1000, 0, 255); 
     analogWrite(PWMA, a_speed);
     analogWrite(PWMB, a_speed);       
   }
 
-  else if(sig2 > 1500) {
+  else if(sig2 < 1500) {
     // sig1 is X, sig2 is 1, state: RIGHT
-    Serial.println("RIGHT"); 
+    Serial.print("RIGHT "); 
 
-    if(sig1 < 1500) {
-      // NORTHEAST
-      // set driver to COUNTER-CLOCKWISE mode
+    if(sig1 > 1560) {
+      Serial.println("FORWARD");  
+      // set driver to CLOCKWISE mode
       digitalWrite(AIN1, HIGH);
       digitalWrite(AIN2, LOW); 
       digitalWrite(BIN1, HIGH);
@@ -109,21 +121,19 @@ void loop() {
   
       // limit sig1 values for speed
       if(sig1 > 2000) sig1 = 2000; 
-      if(sig1 < 1000) sig1 = 1000;
-
-      // limit sig1 values for speed
-      if(sig2 > 2000) sig2 = 2000; 
+      // limit sig2 values for speed
       if(sig2 < 1000) sig2 = 1000;
   
-      b_speed = map(sig1, 1000, 2000, 0, 255); 
-      offset = map(sig2, 1000, 2000, 0, 100); 
-      a_speed = a_speed - offset; 
+      b_speed = map(sig1, 1560, 2000, 0, 255); 
+      offset  = map(sig2, 1500, 1000, 0, 100); 
+      // to go RIGHT, left side faster than right side 
+      a_speed = b_speed - offset; 
       analogWrite(PWMA, a_speed);
       analogWrite(PWMB, b_speed);  
     }
 
-    if(sig1 > 1560) {
-      // NORTHEAST
+    if(sig1 < 1500) {
+      Serial.println(BACKWARD); 
       // set driver to COUNTER-CLOCKWISE mode
       digitalWrite(AIN1, LOW);
       digitalWrite(AIN2, HIGH); 
@@ -131,25 +141,64 @@ void loop() {
       digitalWrite(BIN2, HIGH); 
   
       // limit sig1 values for speed
-      if(sig1 > 2000) sig1 = 2000; 
       if(sig1 < 1000) sig1 = 1000;
-
-      // limit sig1 values for speed
-      if(sig2 > 2000) sig2 = 2000; 
+      // limit sig2 values for speed
       if(sig2 < 1000) sig2 = 1000;
   
-      b_speed = map(sig1, 1000, 2000, 0, 255); 
-      offset = map(sig2, 1000, 2000, 0, 100); 
-      a_speed = a_speed - offset; 
+      b_speed = map(sig1, 1500, 1000, 0, 255); 
+      offset  = map(sig2, 1500, 1000, 0, 100);
+      // to go RIGHT, left side faster than right side 
+      a_speed = b_speed - offset; 
       analogWrite(PWMA, a_speed);
       analogWrite(PWMB, b_speed);  
     }
   }
 
-  else if(sig2 < 1560) {
+  else if(sig2 > 1560) {
     // sig1 is X, sig2 is -1, state: LEFT
-    Serial.println("LEFT"); 
-    
+    Serial.print("LEFT "); 
+
+    if(sig1 > 1560) {
+      Serial.println("FORWARD"); 
+      // set driver to CLOCKWISE mode
+      digitalWrite(AIN1, HIGH);
+      digitalWrite(AIN2, LOW); 
+      digitalWrite(BIN1, HIGH);
+      digitalWrite(BIN2, LOW); 
+  
+      // limit sig1 values for speed
+      if(sig1 > 2000) sig1 = 2000; 
+      // limit sig1 values for speed
+      if(sig2 > 2000) sig2 = 2000; 
+  
+      a_speed = map(sig1, 1560, 2000, 0, 255); 
+      offset  = map(sig2, 1560, 2000, 0, 100); 
+      // to go LEFT, right side faster than left
+      b_speed = a_speed - offset; 
+      analogWrite(PWMA, a_speed);
+      analogWrite(PWMB, b_speed);  
+    }
+
+    if(sig1 < 1500) {
+      Serial.println("BACKWARD");  
+      // set driver to COUNTER-CLOCKWISE mode
+      digitalWrite(AIN1, LOW);
+      digitalWrite(AIN2, HIGH); 
+      digitalWrite(BIN1, LOW);
+      digitalWrite(BIN2, HIGH); 
+  
+      // limit sig1 values for speed
+      if(sig1 < 1000) sig1 = 1000;
+      // limit sig1 values for speed
+      if(sig2 > 2000) sig2 = 2000; 
+  
+      a_speed = map(sig1, 1500, 1000, 0, 255); 
+      offset  = map(sig2, 1560, 2000, 0, 100); 
+      // to go LEFT, right side faster than left
+      b_speed = a_speed - offset; 
+      analogWrite(PWMA, a_speed);
+      analogWrite(PWMB, b_speed);  
+    }
   }
 
   else if(sig1 == 0 || sig2 == 0) {
