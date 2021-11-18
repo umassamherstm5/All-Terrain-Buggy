@@ -5,18 +5,19 @@
  * Authors: Akshat Sahay, Chris Caron, Sebastian Armstrong 
  */
 
-#define CHANNEL_1 5 // channel 1 of the controller
-#define CHANNEL_2 6 // channel 2 of the controller
+#define CHANNEL_1 A1 // channel 1 of the controller
+#define CHANNEL_2 A2 // channel 2 of the controller
 
-/* driver pins for TB6612, A is right and B is left*/
+/* driver pins for TB6612, A is right and B is left */
 #define AIN1 2
 #define AIN2 3
 #define PWMA 10
 
-#define BIN1 A1
-#define BIN2 A2
+#define BIN1 5
+#define BIN2 6
 #define PWMB 9
 
+/* thresholds for signal values, used in loop */
 #define SIG_HIGH_ACC 1490
 #define SIG_LOW_ACC 1410
 
@@ -30,9 +31,7 @@ int sig2 = 0; // CHANNEL_2 value
 
 int a_speed = 0; // speed of A side
 int b_speed = 0; // speed of B side
-int offset  = 0;  // speed difference for turning
-
-int getState(int sig1, int sig2); 
+int offset  = 0; // speed difference for turning
 
 void setup() {
   // set RC channels to INPUT
@@ -114,7 +113,7 @@ void loop() {
     analogWrite(PWMB, a_speed);       
   }
 
-  else if(sig2 < SIG_LOW_STEER) {
+  else if((sig2 < SIG_LOW_STEER) && sig2 > 0) {
     // sig1 is X, sig2 is 1, state: RIGHT
     Serial.print("RIGHT "); 
 
@@ -240,7 +239,12 @@ void loop() {
     }
   }
 
-  else if(sig1 == 0 || sig2 == 0) {
+  else {
     Serial.println("ERROR"); 
+    // set driver to STOP mode 
+    digitalWrite(AIN1, LOW);
+    digitalWrite(AIN2, LOW); 
+    digitalWrite(BIN1, LOW);
+    digitalWrite(BIN2, LOW);
   }
 }
