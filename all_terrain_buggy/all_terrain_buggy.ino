@@ -5,8 +5,30 @@
  * Authors: Akshat Sahay, Chris Caron, Sebastian Armstrong 
  */
 
+/*
+ * FlySky FS-GT
+ * The FlySky FS-GT is a radio receiver module which pairs to a FlySky hobbyist controller. 
+ * 
+ * We connect this receiver to our Feather 328P and read the pulses on different channels. 
+ * CHANNEL_1 refers to the left joystick's vertical motion. 
+ * CHANNEL_2 refers to the right joystick's horizontal motion. 
+ */
+
 #define CHANNEL_1 A1 // channel 1 of the controller
 #define CHANNEL_2 A2 // channel 2 of the controller
+
+/*
+ * TB6612FNG Dual H-Bridge
+ * The TB6612FNG is a dual H-bridge motor driver which is FET based.
+ * We can control its functioning using digital and analog signals. 
+ * 
+ * Pins AIN1 and AIN2 control motor 1 (the right side). 
+ * Pins BIN1 and BIN2 control motor 2 (the left side). 
+ * Pins PWMA and PWMB control the speed for each side respectively.
+ * 
+ * More details on its functioning on: https://learn.sparkfun.com/tutorials/tb6612fng-hookup-guide/all
+ * We use the CW, CCW and STOP modes of the driver
+*/
 
 /* driver pins for TB6612, A is right and B is left */
 #define AIN1 2
@@ -16,6 +38,19 @@
 #define BIN1 5
 #define BIN2 6
 #define PWMB 9
+
+/*
+ * We use pulseIn to read the pulse durations on CHANNEL_1 and CHANNEL_2. 
+ * pulseIn detects a change on a pin (LOW->HIGH/HIGH->LOW). 
+ * It measures the duration of the change and returns the duration in microseconds. 
+ * 
+ * The receiver pulses have default durations of about 1450us for CHANNEL_1 and 1475us for CHANNEL_2.  
+ * Any shorter or longer pulses mean the joysticks are being used, and the buggy needs to perform an action. 
+ * 
+ * The threshold values are to check for the default durations: they act as a "deadzone" when the joysticks 
+ * are in their central position. The car only performs actions when the durations are more than the 
+ * "deadzone" values. 
+*/
 
 /* thresholds for signal values, used in loop */
 #define SIG_HIGH_ACC 1490
