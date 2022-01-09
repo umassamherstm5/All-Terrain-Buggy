@@ -112,15 +112,15 @@ Wire Wire Line
 	1300 1500 1400 1500
 Text Notes 1000 950  0    75   ~ 0
 Power Electronics\n
-NoConn ~ 2950 3700
-NoConn ~ 2950 4200
-NoConn ~ 2950 4100
-NoConn ~ 2950 4000
-NoConn ~ 1950 4200
-NoConn ~ 1950 4100
-NoConn ~ 1950 4000
-NoConn ~ 1950 3800
-NoConn ~ 1950 3700
+NoConn ~ 2400 3750
+NoConn ~ 2400 4250
+NoConn ~ 2400 4150
+NoConn ~ 2400 4050
+NoConn ~ 1400 4250
+NoConn ~ 1400 4150
+NoConn ~ 1400 4050
+NoConn ~ 1400 3850
+NoConn ~ 1400 3750
 $Comp
 L Buggy_Components:VM #PWR010
 U 1 1 61E00482
@@ -143,12 +143,6 @@ F 3 "" H 5600 2000 50  0001 C CNN
 	1    5600 2000
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1150 3500 1950 3500
-Wire Wire Line
-	1500 3600 1950 3600
-Wire Wire Line
-	1150 3600 1150 3500
 Text Notes 5500 1450 0    75   ~ 0
 Control Electronics
 Wire Notes Line
@@ -160,122 +154,50 @@ Wire Notes Line
 Wire Notes Line
 	7500 4000 7500 1500
 Wire Notes Line
-	3500 2500 3500 5500
-Wire Notes Line
 	1000 5500 1000 2500
-Wire Notes Line
-	3500 5500 1000 5500
-Wire Notes Line
-	3500 2500 1000 2500
-$Comp
-L power:GND #PWR0103
-U 1 1 61D9CEC9
-P 1500 4200
-F 0 "#PWR0103" H 1500 3950 50  0001 C CNN
-F 1 "GND" H 1505 4027 50  0000 C CNN
-F 2 "" H 1500 4200 50  0001 C CNN
-F 3 "" H 1500 4200 50  0001 C CNN
-	1    1500 4200
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0102
-U 1 1 61D9C867
-P 1150 4200
-F 0 "#PWR0102" H 1150 3950 50  0001 C CNN
-F 1 "GND" H 1155 4027 50  0000 C CNN
-F 2 "" H 1150 4200 50  0001 C CNN
-F 3 "" H 1150 4200 50  0001 C CNN
-	1    1150 4200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R1
-U 1 1 61D9A79A
-P 1150 3750
-F 0 "R1" H 1220 3796 50  0000 L CNN
-F 1 "330" H 1220 3705 50  0000 L CNN
-F 2 "" V 1080 3750 50  0001 C CNN
-F 3 "~" H 1150 3750 50  0001 C CNN
-	1    1150 3750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R2
-U 1 1 61D99D67
-P 1500 3750
-F 0 "R2" H 1570 3796 50  0000 L CNN
-F 1 "330" H 1570 3705 50  0000 L CNN
-F 2 "" V 1430 3750 50  0001 C CNN
-F 3 "~" H 1500 3750 50  0001 C CNN
-	1    1500 3750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:LED D4
-U 1 1 61D8850F
-P 1500 4050
-F 0 "D4" V 1539 3932 50  0000 R CNN
-F 1 "NO_SIG" V 1448 3932 50  0000 R CNN
-F 2 "" H 1500 4050 50  0001 C CNN
-F 3 "~" H 1500 4050 50  0001 C CNN
-	1    1500 4050
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:LED D3
-U 1 1 61D86F74
-P 1150 4050
-F 0 "D3" V 1189 3932 50  0000 R CNN
-F 1 "SIG" V 1098 3932 50  0000 R CNN
-F 2 "" H 1150 4050 50  0001 C CNN
-F 3 "~" H 1150 4050 50  0001 C CNN
-	1    1150 4050
-	0    -1   -1   0   
-$EndComp
-NoConn ~ 1950 4800
-NoConn ~ 1950 4700
-NoConn ~ 1950 4500
-NoConn ~ 1950 4400
-NoConn ~ 2950 3500
-NoConn ~ 2950 3400
-NoConn ~ 2950 3100
-NoConn ~ 2650 2700
-NoConn ~ 2550 2700
-NoConn ~ 2350 2700
+NoConn ~ 1400 4850
+NoConn ~ 1400 4750
+NoConn ~ 1400 4550
+NoConn ~ 1400 4450
+NoConn ~ 2400 3550
+NoConn ~ 2400 3450
+NoConn ~ 2400 3150
+NoConn ~ 2100 2750
+NoConn ~ 2000 2750
+NoConn ~ 1800 2750
 $Comp
 L power:GND #PWR0101
 U 1 1 61D8BB98
-P 2450 5200
-F 0 "#PWR0101" H 2450 4950 50  0001 C CNN
-F 1 "GND" H 2455 5027 50  0000 C CNN
-F 2 "" H 2450 5200 50  0001 C CNN
-F 3 "" H 2450 5200 50  0001 C CNN
-	1    2450 5200
+P 1900 5250
+F 0 "#PWR0101" H 1900 5000 50  0001 C CNN
+F 1 "GND" H 1905 5077 50  0000 C CNN
+F 2 "" H 1900 5250 50  0001 C CNN
+F 3 "" H 1900 5250 50  0001 C CNN
+	1    1900 5250
 	1    0    0    -1  
 $EndComp
 $Comp
 L MCU_Module:Adafruit_Feather_328P A1
 U 1 1 61D69E86
-P 2450 3900
-F 0 "A1" H 2100 5050 50  0000 C CNN
-F 1 "Feather 328P" H 2700 2650 40  0000 C CNN
-F 2 "Module:Adafruit_Feather" H 2550 2550 50  0001 L CNN
-F 3 "https://cdn-learn.adafruit.com/downloads/pdf/adafruit-feather.pdf" H 2450 3100 50  0001 C CNN
-	1    2450 3900
+P 1900 3950
+F 0 "A1" H 1550 5100 50  0000 C CNN
+F 1 "Feather 328P" H 2150 2700 40  0000 C CNN
+F 2 "Module:Adafruit_Feather" H 2000 2600 50  0001 L CNN
+F 3 "https://cdn-learn.adafruit.com/downloads/pdf/adafruit-feather.pdf" H 1900 3150 50  0001 C CNN
+	1    1900 3950
 	1    0    0    -1  
 $EndComp
-Text GLabel 2950 3900 2    50   Input ~ 0
+Text GLabel 2400 3950 2    50   Input ~ 0
 CHANNEL_2
-Text GLabel 2950 3800 2    50   Input ~ 0
+Text GLabel 2400 3850 2    50   Input ~ 0
 CHANNEL_1
-Text GLabel 1950 3400 0    50   Input ~ 0
+Text GLabel 1400 3450 0    50   Input ~ 0
 BIN2
-Text GLabel 1950 3300 0    50   Input ~ 0
+Text GLabel 1400 3350 0    50   Input ~ 0
 BIN1
-Text GLabel 1950 3200 0    50   Input ~ 0
+Text GLabel 1400 3250 0    50   Input ~ 0
 AIN2
-Text GLabel 1950 3100 0    50   Input ~ 0
+Text GLabel 1400 3150 0    50   Input ~ 0
 AIN1
 Connection ~ 6800 3550
 Wire Wire Line
@@ -514,4 +436,12 @@ F 3 "" H 3050 1700 50  0001 C CNN
 $EndComp
 Wire Notes Line
 	1000 2000 3500 2000
+NoConn ~ 1400 3550
+NoConn ~ 1400 3650
+Wire Notes Line
+	3000 2500 3000 5500
+Wire Notes Line
+	1000 2500 3000 2500
+Wire Notes Line
+	1000 5500 3000 5500
 $EndSCHEMATC
