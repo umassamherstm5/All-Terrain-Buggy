@@ -9,13 +9,14 @@
     (nets 31)
   )
 
-  (page A4)
+  (page User 215.9 177.8)
   (title_block
     (title "All-Terrain Buggy")
     (date 2022-01-11)
     (rev v1.0)
     (company "M5 Makerspace")
-    (comment 3 "CC BY 4.0")
+    (comment 2 creativecommons.org/licenses/by/4.0/)
+    (comment 3 "License: CC BY 4.0")
     (comment 4 "Authors: Akshat Sahay, Sebastian Armstrong")
   )
 
@@ -170,7 +171,7 @@
   )
 
   (module Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical (layer F.Cu) (tedit 5A19A429) (tstamp 61DD3373)
-    (at 153.67 93.98)
+    (at 129.54 77.47)
     (descr "Through hole straight socket strip, 1x04, 2.54mm pitch, single row (from Kicad 4.0.7), script generated")
     (tags "Through hole socket strip THT 1x04 2.54mm single row")
     (path /61D32985)
@@ -214,7 +215,7 @@
   )
 
   (module Module:Adafruit_Feather (layer F.Cu) (tedit 5F71FFF3) (tstamp 61DD332B)
-    (at 125.73 63.5)
+    (at 101.6 46.99)
     (descr "Common footprint for the Adafruit Feather series of boards, https://learn.adafruit.com/adafruit-feather/feather-specification")
     (tags "Adafruit Feather")
     (path /61D69E86)
@@ -318,7 +319,7 @@
   )
 
   (module Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical (layer F.Cu) (tedit 5A19A429) (tstamp 61DD3343)
-    (at 153.565001 63.5)
+    (at 129.435001 46.99)
     (descr "Through hole straight socket strip, 1x04, 2.54mm pitch, single row (from Kicad 4.0.7), script generated")
     (tags "Through hole socket strip THT 1x04 2.54mm single row")
     (path /61D2F2F4)
@@ -362,7 +363,7 @@
   )
 
   (module Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical (layer F.Cu) (tedit 5A19A429) (tstamp 61DD335B)
-    (at 153.67 78.74)
+    (at 129.54 62.23)
     (descr "Through hole straight socket strip, 1x04, 2.54mm pitch, single row (from Kicad 4.0.7), script generated")
     (tags "Through hole socket strip THT 1x04 2.54mm single row")
     (path /61D314D6)
@@ -406,7 +407,7 @@
   )
 
   (module Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical (layer F.Cu) (tedit 5A19A429) (tstamp 61DD338B)
-    (at 118.11 63.5)
+    (at 93.98 46.99)
     (descr "Through hole straight socket strip, 1x04, 2.54mm pitch, single row (from Kicad 4.0.7), script generated")
     (tags "Through hole socket strip THT 1x04 2.54mm single row")
     (path /61D8E1CF)
@@ -450,7 +451,7 @@
   )
 
   (module Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical (layer F.Cu) (tedit 5A19A429) (tstamp 61DD33A3)
-    (at 118.11 78.74)
+    (at 93.98 62.23)
     (descr "Through hole straight socket strip, 1x04, 2.54mm pitch, single row (from Kicad 4.0.7), script generated")
     (tags "Through hole socket strip THT 1x04 2.54mm single row")
     (path /61D8E1C9)
@@ -494,7 +495,7 @@
   )
 
   (module Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical (layer F.Cu) (tedit 5A19A429) (tstamp 61DD33BB)
-    (at 118.11 93.98)
+    (at 93.98 77.47)
     (descr "Through hole straight socket strip, 1x04, 2.54mm pitch, single row (from Kicad 4.0.7), script generated")
     (tags "Through hole socket strip THT 1x04 2.54mm single row")
     (path /61D8E1C3)
@@ -538,7 +539,7 @@
   )
 
   (module Package_TO_SOT_THT:TO-220-2_Horizontal_TabDown (layer F.Cu) (tedit 5AC8BA0D) (tstamp 61DD33D8)
-    (at 116.84 114.3 270)
+    (at 92.71 97.79 270)
     (descr "TO-220-2, Horizontal, RM 5.08mm, see https://www.centralsemi.com/PDFS/CASE/TO-220-2PD.PDF")
     (tags "TO-220-2 Horizontal RM 5.08mm")
     (path /61DEEBD5)
@@ -585,7 +586,7 @@
   )
 
   (module Connector_AMASS:AMASS_XT60-F_1x02_P7.20mm_Vertical (layer F.Cu) (tedit 5D6C1D2C) (tstamp 61DD33F1)
-    (at 153.67 111.76 270)
+    (at 129.54 95.25 270)
     (descr "AMASS female XT60, through hole, vertical, https://www.tme.eu/Document/2d152ced3b7a446066e6c419d84bb460/XT60%20SPEC.pdf")
     (tags "XT60 female vertical")
     (path /61DE8224)
@@ -627,6 +628,6 @@
     )
   )
 
-  (segment (start 153.565001 66.840998) (end 153.565001 66.04) (width 0.25) (layer F.Cu) (net 25))
+  (segment (start 129.435001 50.330998) (end 129.435001 49.53) (width 0.25) (layer F.Cu) (net 25))
 
 )

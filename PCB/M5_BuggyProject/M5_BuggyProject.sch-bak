@@ -5,11 +5,11 @@ $Descr User 9000 6500
 encoding utf-8
 Sheet 1 1
 Title "All-Terrain Buggy "
-Date "2022-01-07"
-Rev "v1.0"
+Date "2022-01-11"
+Rev "v1.1"
 Comp "M5 Makerspace "
 Comment1 ""
-Comment2 "https://creativecommons.org/licenses/by/4.0/"
+Comment2 "creativecommons.org/licenses/by/4.0/"
 Comment3 "CC BY 4.0"
 Comment4 "Author: Akshat Sahay, Sebastian Armstrong "
 $EndDescr
@@ -362,10 +362,10 @@ Wire Notes Line
 Wire Wire Line
 	2150 1400 2000 1400
 $Comp
-L power:+7.5V #PWR?
+L power:+7.5V #PWR06
 U 1 1 61DEFD0D
 P 2600 1400
-F 0 "#PWR?" H 2600 1250 50  0001 C CNN
+F 0 "#PWR06" H 2600 1250 50  0001 C CNN
 F 1 "+7.5V" H 2615 1573 50  0000 C CNN
 F 2 "" H 2600 1400 50  0001 C CNN
 F 3 "" H 2600 1400 50  0001 C CNN
@@ -375,10 +375,10 @@ $EndComp
 Wire Wire Line
 	2450 1400 2600 1400
 $Comp
-L power:+7.5V #PWR?
+L power:+7.5V #PWR07
 U 1 1 61DF115C
 P 6100 1500
-F 0 "#PWR?" H 6100 1350 50  0001 C CNN
+F 0 "#PWR07" H 6100 1350 50  0001 C CNN
 F 1 "+7.5V" H 6115 1666 40  0000 C CNN
 F 2 "" H 6100 1500 50  0001 C CNN
 F 3 "" H 6100 1500 50  0001 C CNN
@@ -386,10 +386,10 @@ F 3 "" H 6100 1500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+7.5V #PWR?
+L power:+7.5V #PWR08
 U 1 1 61DF13CD
 P 7100 1500
-F 0 "#PWR?" H 7100 1350 50  0001 C CNN
+F 0 "#PWR08" H 7100 1350 50  0001 C CNN
 F 1 "+7.5V" H 7115 1666 40  0000 C CNN
 F 2 "" H 7100 1500 50  0001 C CNN
 F 3 "" H 7100 1500 50  0001 C CNN

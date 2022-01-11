@@ -5,11 +5,11 @@ $Descr User 9000 6500
 encoding utf-8
 Sheet 1 1
 Title "All-Terrain Buggy "
-Date "2022-01-07"
-Rev "v1.0"
+Date "2022-01-11"
+Rev "v1.1"
 Comp "M5 Makerspace "
 Comment1 ""
-Comment2 "https://creativecommons.org/licenses/by/4.0/"
+Comment2 "creativecommons.org/licenses/by/4.0/"
 Comment3 "CC BY 4.0"
 Comment4 "Author: Akshat Sahay, Sebastian Armstrong "
 $EndDescr
