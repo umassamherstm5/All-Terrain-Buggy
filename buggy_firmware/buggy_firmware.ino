@@ -39,8 +39,8 @@
  */
 
 /* pin assignments for driver control signals */
-#define AIN1 5
-#define AIN2 6 
+#define AIN1 6
+#define AIN2 5 
 #define BIN1 9
 #define BIN2 10 
 
