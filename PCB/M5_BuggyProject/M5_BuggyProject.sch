@@ -1,11 +1,11 @@
 EESchema Schematic File Version 4
 EELAYER 30 0
 EELAYER END
-$Descr User 8000 6500
+$Descr User 9000 6500
 encoding utf-8
 Sheet 1 1
 Title "All-Terrain Buggy "
-Date "2022-01-12"
+Date "2022-01-19"
 Rev "v1.1"
 Comp "M5 Makerspace "
 Comment1 ""
@@ -43,241 +43,18 @@ Wire Wire Line
 	1300 1400 1400 1400
 Text Notes 1000 950  0    75   ~ 0
 Power Electronics\n
-NoConn ~ 2400 3700
-NoConn ~ 2400 4200
-NoConn ~ 2400 4100
-NoConn ~ 2400 4000
-NoConn ~ 1400 4200
-NoConn ~ 1400 4000
-NoConn ~ 1400 3800
-NoConn ~ 1400 3700
-Text Notes 5000 950  0    75   ~ 0
-Control Electronics
+Text Notes 6000 950  0    75   ~ 0
+Control Electronics / Drivetrain
 Wire Notes Line
-	5000 1000 5000 3500
+	6000 1000 6000 3500
 Wire Notes Line
-	5000 3500 7000 3500
+	6000 3500 8000 3500
 Wire Notes Line
-	7000 1000 5000 1000
+	8000 1000 6000 1000
 Wire Notes Line
-	7000 3500 7000 1000
+	8000 3500 8000 1000
 Wire Notes Line
 	1000 5500 1000 2500
-NoConn ~ 1400 4800
-NoConn ~ 1400 4700
-NoConn ~ 1400 4500
-NoConn ~ 1400 4400
-NoConn ~ 2400 3500
-NoConn ~ 2400 3400
-NoConn ~ 2400 3100
-NoConn ~ 2100 2700
-NoConn ~ 2000 2700
-NoConn ~ 1800 2700
-$Comp
-L power:GND #PWR0101
-U 1 1 61D8BB98
-P 1900 5200
-F 0 "#PWR0101" H 1900 4950 50  0001 C CNN
-F 1 "GND" H 1905 5027 50  0000 C CNN
-F 2 "" H 1900 5200 50  0001 C CNN
-F 3 "" H 1900 5200 50  0001 C CNN
-	1    1900 5200
-	1    0    0    -1  
-$EndComp
-Text GLabel 1400 3400 0    50   Input ~ 0
-BIN2
-Text GLabel 1400 3300 0    50   Input ~ 0
-BIN1
-Connection ~ 6300 3050
-Wire Wire Line
-	6300 3050 6300 3200
-Connection ~ 5300 3050
-Wire Wire Line
-	5300 3050 5300 3200
-$Comp
-L power:GND #PWR05
-U 1 1 61D3B442
-P 6300 3200
-F 0 "#PWR05" H 6300 2950 50  0001 C CNN
-F 1 "GND" H 6305 3027 50  0000 C CNN
-F 2 "" H 6300 3200 50  0001 C CNN
-F 3 "" H 6300 3200 50  0001 C CNN
-	1    6300 3200
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR03
-U 1 1 61D3A90D
-P 5300 3200
-F 0 "#PWR03" H 5300 2950 50  0001 C CNN
-F 1 "GND" H 5305 3027 50  0000 C CNN
-F 2 "" H 5300 3200 50  0001 C CNN
-F 3 "" H 5300 3200 50  0001 C CNN
-	1    5300 3200
-	1    0    0    -1  
-$EndComp
-Text GLabel 6400 1450 0    50   Input ~ 0
-BIN2
-Text GLabel 6450 1350 0    50   Input ~ 0
-BIN1
-Wire Wire Line
-	6300 2350 6300 3050
-Connection ~ 6300 2350
-Wire Wire Line
-	6300 2350 6500 2350
-Wire Wire Line
-	6300 3050 6500 3050
-Wire Wire Line
-	6300 1650 6300 2350
-Wire Wire Line
-	6500 1650 6300 1650
-Wire Wire Line
-	6350 2250 6350 2950
-Connection ~ 6350 2250
-Wire Wire Line
-	6350 2250 6500 2250
-Wire Wire Line
-	6350 2950 6500 2950
-Wire Wire Line
-	6350 1550 6350 2250
-Wire Wire Line
-	6500 1550 6350 1550
-Connection ~ 6400 2150
-Wire Wire Line
-	6400 2850 6500 2850
-Wire Wire Line
-	6400 2150 6400 2850
-Wire Wire Line
-	6400 2150 6500 2150
-Wire Wire Line
-	6400 1450 6400 2150
-Wire Wire Line
-	6500 1450 6400 1450
-Connection ~ 6450 2050
-Wire Wire Line
-	6450 2750 6500 2750
-Wire Wire Line
-	6450 2050 6450 2750
-Wire Wire Line
-	6450 2050 6500 2050
-Wire Wire Line
-	6450 1350 6450 2050
-Wire Wire Line
-	6500 1350 6450 1350
-$Comp
-L Buggy_Components:Adafruit_DRV8871_Breakout A5
-U 1 1 61D8E1CF
-P 6750 1500
-F 0 "A5" H 6600 1750 50  0000 L CNN
-F 1 "DRV8871" H 6600 1250 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 6650 1500 50  0001 C CNN
-F 3 "" H 6650 1500 50  0001 C CNN
-	1    6750 1500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Buggy_Components:Adafruit_DRV8871_Breakout A6
-U 1 1 61D8E1C9
-P 6750 2200
-F 0 "A6" H 6600 2450 50  0000 L CNN
-F 1 "DRV8871" H 6600 1950 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 6650 2200 50  0001 C CNN
-F 3 "" H 6650 2200 50  0001 C CNN
-	1    6750 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Buggy_Components:Adafruit_DRV8871_Breakout A7
-U 1 1 61D8E1C3
-P 6750 2900
-F 0 "A7" H 6600 3150 50  0000 L CNN
-F 1 "DRV8871" H 6600 2650 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 6650 2900 50  0001 C CNN
-F 3 "" H 6650 2900 50  0001 C CNN
-	1    6750 2900
-	1    0    0    -1  
-$EndComp
-Text GLabel 5400 1450 0    50   Input ~ 0
-AIN2
-Text GLabel 5450 1350 0    50   Input ~ 0
-AIN1
-Wire Wire Line
-	5300 2350 5300 3050
-Connection ~ 5300 2350
-Wire Wire Line
-	5300 2350 5500 2350
-Wire Wire Line
-	5300 3050 5500 3050
-Wire Wire Line
-	5300 1650 5300 2350
-Wire Wire Line
-	5500 1650 5300 1650
-Wire Wire Line
-	5350 2250 5350 2950
-Connection ~ 5350 2250
-Wire Wire Line
-	5350 2250 5500 2250
-Wire Wire Line
-	5350 2950 5500 2950
-Wire Wire Line
-	5350 1550 5350 2250
-Wire Wire Line
-	5500 1550 5350 1550
-Connection ~ 5400 2150
-Wire Wire Line
-	5400 2850 5500 2850
-Wire Wire Line
-	5400 2150 5400 2850
-Wire Wire Line
-	5400 2150 5500 2150
-Wire Wire Line
-	5400 1450 5400 2150
-Wire Wire Line
-	5500 1450 5400 1450
-Connection ~ 5450 2050
-Wire Wire Line
-	5450 2750 5500 2750
-Wire Wire Line
-	5450 2050 5450 2750
-Wire Wire Line
-	5450 2050 5500 2050
-Wire Wire Line
-	5450 1350 5450 2050
-Wire Wire Line
-	5500 1350 5450 1350
-$Comp
-L Buggy_Components:Adafruit_DRV8871_Breakout A2
-U 1 1 61D2F2F4
-P 5750 1500
-F 0 "A2" H 5600 1750 50  0000 L CNN
-F 1 "DRV8871" H 5600 1250 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 5650 1500 50  0001 C CNN
-F 3 "" H 5650 1500 50  0001 C CNN
-	1    5750 1500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Buggy_Components:Adafruit_DRV8871_Breakout A3
-U 1 1 61D314D6
-P 5750 2200
-F 0 "A3" H 5600 2450 50  0000 L CNN
-F 1 "DRV8871" H 5600 1950 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 5650 2200 50  0001 C CNN
-F 3 "" H 5650 2200 50  0001 C CNN
-	1    5750 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Buggy_Components:Adafruit_DRV8871_Breakout A4
-U 1 1 61D32985
-P 5750 2900
-F 0 "A4" H 5600 3150 50  0000 L CNN
-F 1 "DRV8871" H 5600 2650 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 5650 2900 50  0001 C CNN
-F 3 "" H 5650 2900 50  0001 C CNN
-	1    5750 2900
-	1    0    0    -1  
-$EndComp
 Text Notes 1000 2450 0    75   ~ 0
 Microcontroller
 $Comp
@@ -291,171 +68,106 @@ F 3 "" H 1400 1700 50  0001 C CNN
 	1    1400 1700
 	1    0    0    -1  
 $EndComp
-NoConn ~ 1400 3500
-NoConn ~ 1400 3600
-$Comp
-L MCU_Module:Adafruit_Feather_328P A1
-U 1 1 61D69E86
-P 1900 3900
-F 0 "A1" H 1550 5050 50  0000 C CNN
-F 1 "Feather 328P" H 2150 2650 40  0000 C CNN
-F 2 "Module:Adafruit_Feather" H 2000 2550 50  0001 L CNN
-F 3 "https://cdn-learn.adafruit.com/downloads/pdf/adafruit-feather.pdf" H 1900 3100 50  0001 C CNN
-	1    1900 3900
-	1    0    0    -1  
-$EndComp
-Text GLabel 2400 3800 2    50   Input ~ 0
-CHANNEL_1
-Text GLabel 2400 3900 2    50   Input ~ 0
-CHANNEL_2
-Wire Notes Line
-	1000 5500 3000 5500
-NoConn ~ 1400 4100
 Wire Notes Line
 	3000 2500 3000 5500
 Wire Notes Line
 	1000 2500 3000 2500
-Text GLabel 1400 3100 0    50   Input ~ 0
-AIN2
-Text GLabel 1400 3200 0    50   Input ~ 0
-AIN1
-Wire Notes Line
-	3500 1000 1000 1000
-Wire Notes Line
-	1000 2000 3500 2000
 Wire Wire Line
-	1800 1300 1750 1300
+	1650 1300 1600 1300
 $Comp
 L power:VCC #PWR0102
 U 1 1 61DE024E
-P 1750 1300
-F 0 "#PWR0102" H 1750 1150 50  0001 C CNN
-F 1 "VCC" H 1765 1473 50  0000 C CNN
-F 2 "" H 1750 1300 50  0001 C CNN
-F 3 "" H 1750 1300 50  0001 C CNN
-	1    1750 1300
+P 1600 1300
+F 0 "#PWR0102" H 1600 1150 50  0001 C CNN
+F 1 "VCC" H 1615 1473 50  0000 C CNN
+F 2 "" H 1600 1300 50  0001 C CNN
+F 3 "" H 1600 1300 50  0001 C CNN
+	1    1600 1300
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:D_Schottky D1
 U 1 1 61DEEBD5
-P 1950 1300
-F 0 "D1" H 1950 1200 50  0000 C CNN
-F 1 "D_Schottky" H 1950 1400 40  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-220-2_Vertical" H 1950 1300 50  0001 C CNN
-F 3 "~" H 1950 1300 50  0001 C CNN
-	1    1950 1300
+P 1800 1300
+F 0 "D1" H 1800 1200 50  0000 C CNN
+F 1 "D_Schottky" H 1800 1400 40  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-2_Vertical" H 1800 1300 50  0001 C CNN
+F 3 "~" H 1800 1300 50  0001 C CNN
+	1    1800 1300
 	-1   0    0    1   
 $EndComp
-Connection ~ 2250 1300
+Connection ~ 2100 1300
 Wire Wire Line
-	2250 1300 2650 1300
-Connection ~ 2650 1300
+	2100 1300 2500 1300
+Connection ~ 2500 1300
 Wire Wire Line
-	2650 1300 2750 1300
-$Comp
-L power:+12V #PWR0103
-U 1 1 61DE130C
-P 2650 1300
-F 0 "#PWR0103" H 2650 1150 50  0001 C CNN
-F 1 "+12V" H 2665 1473 50  0000 C CNN
-F 2 "" H 2650 1300 50  0001 C CNN
-F 3 "" H 2650 1300 50  0001 C CNN
-	1    2650 1300
-	1    0    0    -1  
-$EndComp
+	2500 1300 2600 1300
 Wire Wire Line
-	3100 1300 3050 1300
+	2950 1300 2900 1300
 $Comp
 L Device:LED D3
 U 1 1 61DE226D
-P 3100 1450
-F 0 "D3" V 3139 1332 50  0000 R CNN
-F 1 "LED" V 3048 1332 50  0000 R CNN
-F 2 "LED_SMD:LED_1206_3216Metric" H 3100 1450 50  0001 C CNN
-F 3 "~" H 3100 1450 50  0001 C CNN
-	1    3100 1450
+P 2950 1450
+F 0 "D3" V 2989 1332 50  0000 R CNN
+F 1 "BLUE" V 2898 1332 50  0000 R CNN
+F 2 "LED_SMD:LED_1206_3216Metric" H 2950 1450 50  0001 C CNN
+F 3 "~" H 2950 1450 50  0001 C CNN
+	1    2950 1450
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R R1
 U 1 1 61DE06EC
-P 2900 1300
-F 0 "R1" V 2709 1300 50  0000 C CNN
-F 1 "698" V 2800 1300 40  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric" V 2830 1300 50  0001 C CNN
-F 3 "~" H 2900 1300 50  0001 C CNN
-	1    2900 1300
+P 2750 1300
+F 0 "R1" V 2559 1300 50  0000 C CNN
+F 1 "330" V 2650 1300 40  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 2680 1300 50  0001 C CNN
+F 3 "~" H 2750 1300 50  0001 C CNN
+	1    2750 1300
 	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR06
 U 1 1 61DDCF3D
-P 2650 1700
-F 0 "#PWR06" H 2650 1450 50  0001 C CNN
-F 1 "GND" H 2655 1527 50  0000 C CNN
-F 2 "" H 2650 1700 50  0001 C CNN
-F 3 "" H 2650 1700 50  0001 C CNN
-	1    2650 1700
+P 2500 1700
+F 0 "#PWR06" H 2500 1450 50  0001 C CNN
+F 1 "GND" H 2505 1527 50  0000 C CNN
+F 2 "" H 2500 1700 50  0001 C CNN
+F 3 "" H 2500 1700 50  0001 C CNN
+	1    2500 1700
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:CP C1
 U 1 1 61DD9EA3
-P 2250 1450
-F 0 "C1" H 2368 1496 50  0000 L CNN
-F 1 "2200uF" H 2350 1400 40  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" H 2288 1300 50  0001 C CNN
-F 3 "~" H 2250 1450 50  0001 C CNN
-	1    2250 1450
+P 2100 1450
+F 0 "C1" H 2218 1496 50  0000 L CNN
+F 1 "2200uF" H 2200 1400 40  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" H 2138 1300 50  0001 C CNN
+F 3 "~" H 2100 1450 50  0001 C CNN
+	1    2100 1450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2100 1300 2250 1300
-Wire Notes Line
-	3500 1000 3500 2000
-$Comp
-L power:+12V #PWR08
-U 1 1 61E02A86
-P 5350 1550
-F 0 "#PWR08" H 5350 1400 50  0001 C CNN
-F 1 "+12V" V 5365 1678 50  0000 L CNN
-F 2 "" H 5350 1550 50  0001 C CNN
-F 3 "" H 5350 1550 50  0001 C CNN
-	1    5350 1550
-	0    -1   -1   0   
-$EndComp
-Connection ~ 5350 1550
-$Comp
-L power:+12V #PWR09
-U 1 1 61E02DBB
-P 6350 1550
-F 0 "#PWR09" H 6350 1400 50  0001 C CNN
-F 1 "+12V" V 6365 1678 50  0000 L CNN
-F 2 "" H 6350 1550 50  0001 C CNN
-F 3 "" H 6350 1550 50  0001 C CNN
-	1    6350 1550
-	0    -1   -1   0   
-$EndComp
-Connection ~ 6350 1550
+	1950 1300 2100 1300
 $Comp
 L dk_Diodes-Zener-Single:1N5231BTR Z1
 U 1 1 61DF337E
-P 2650 1500
-F 0 "Z1" V 2696 1422 50  0000 R CNN
-F 1 "Diode" V 2605 1422 50  0000 R CNN
-F 2 "digikey-footprints:DO-214AC" H 2850 1700 60  0001 L CNN
-F 3 "https://www.onsemi.com/pub/Collateral/1N5221B-D.PDF" H 2850 1800 60  0001 L CNN
-F 4 "1N5231BFSCT-ND" H 2850 1900 60  0001 L CNN "Digi-Key_PN"
-F 5 "1N5231BTR" H 2850 2000 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 2850 2100 60  0001 L CNN "Category"
-F 7 "Diodes - Zener - Single" H 2850 2200 60  0001 L CNN "Family"
-F 8 "https://www.onsemi.com/pub/Collateral/1N5221B-D.PDF" H 2850 2300 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/1N5231BTR/1N5231BFSCT-ND/1532765" H 2850 2400 60  0001 L CNN "DK_Detail_Page"
-F 10 "DIODE ZENER 5.1V 500MW DO35" H 2850 2500 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 2850 2600 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 2850 2700 60  0001 L CNN "Status"
-	1    2650 1500
+P 2500 1500
+F 0 "Z1" V 2546 1422 50  0000 R CNN
+F 1 "Diode" V 2455 1422 50  0000 R CNN
+F 2 "digikey-footprints:DO-214AC" H 2700 1700 60  0001 L CNN
+F 3 "https://www.onsemi.com/pub/Collateral/1N5221B-D.PDF" H 2700 1800 60  0001 L CNN
+F 4 "1N5231BFSCT-ND" H 2700 1900 60  0001 L CNN "Digi-Key_PN"
+F 5 "1N5231BTR" H 2700 2000 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 2700 2100 60  0001 L CNN "Category"
+F 7 "Diodes - Zener - Single" H 2700 2200 60  0001 L CNN "Family"
+F 8 "https://www.onsemi.com/pub/Collateral/1N5221B-D.PDF" H 2700 2300 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/1N5231BTR/1N5231BFSCT-ND/1532765" H 2700 2400 60  0001 L CNN "DK_Detail_Page"
+F 10 "DIODE ZENER 5.1V 500MW DO35" H 2700 2500 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 2700 2600 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2700 2700 60  0001 L CNN "Status"
+	1    2500 1500
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
@@ -463,27 +175,571 @@ Wire Wire Line
 $Comp
 L power:GND #PWR04
 U 1 1 61E00E38
-P 2250 1700
-F 0 "#PWR04" H 2250 1450 50  0001 C CNN
-F 1 "GND" H 2255 1527 50  0000 C CNN
-F 2 "" H 2250 1700 50  0001 C CNN
-F 3 "" H 2250 1700 50  0001 C CNN
-	1    2250 1700
+P 2100 1700
+F 0 "#PWR04" H 2100 1450 50  0001 C CNN
+F 1 "GND" H 2105 1527 50  0000 C CNN
+F 2 "" H 2100 1700 50  0001 C CNN
+F 3 "" H 2100 1700 50  0001 C CNN
+	1    2100 1700
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR07
 U 1 1 61E018C8
-P 3100 1700
-F 0 "#PWR07" H 3100 1450 50  0001 C CNN
-F 1 "GND" H 3105 1527 50  0000 C CNN
-F 2 "" H 3100 1700 50  0001 C CNN
-F 3 "" H 3100 1700 50  0001 C CNN
-	1    3100 1700
+P 2950 1700
+F 0 "#PWR07" H 2950 1450 50  0001 C CNN
+F 1 "GND" H 2955 1527 50  0000 C CNN
+F 2 "" H 2950 1700 50  0001 C CNN
+F 3 "" H 2950 1700 50  0001 C CNN
+	1    2950 1700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2250 1600 2250 1700
+	2100 1600 2100 1700
 Wire Wire Line
-	3100 1600 3100 1700
+	2950 1600 2950 1700
+Wire Notes Line
+	4500 1000 5500 1000
+Text Notes 4500 950  0    75   ~ 0
+Mounting Holes
+Wire Notes Line
+	1000 1000 4000 1000
+Wire Notes Line
+	1000 2000 4000 2000
+$Comp
+L Connector:Conn_01x01_Male J2
+U 1 1 61E223A0
+P 3350 1750
+F 0 "J2" V 3500 1700 50  0000 R CNN
+F 1 "VCC" V 3400 1700 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 3350 1750 50  0001 C CNN
+F 3 "~" H 3350 1750 50  0001 C CNN
+	1    3350 1750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J3
+U 1 1 61E2318A
+P 3650 1750
+F 0 "J3" V 3800 1700 50  0000 R CNN
+F 1 "10V" V 3700 1700 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 3650 1750 50  0001 C CNN
+F 3 "~" H 3650 1750 50  0001 C CNN
+	1    3650 1750
+	0    -1   -1   0   
+$EndComp
+Wire Notes Line
+	4000 2000 4000 1000
+Wire Wire Line
+	3350 1550 3350 1300
+Wire Wire Line
+	3650 1550 3650 1300
+$Comp
+L power:VCC #PWR010
+U 1 1 61E2EC2D
+P 3350 1300
+F 0 "#PWR010" H 3350 1150 50  0001 C CNN
+F 1 "VCC" H 3365 1473 50  0000 C CNN
+F 2 "" H 3350 1300 50  0001 C CNN
+F 3 "" H 3350 1300 50  0001 C CNN
+	1    3350 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+10V #PWR08
+U 1 1 61E1C277
+P 2500 1300
+F 0 "#PWR08" H 2500 1150 50  0001 C CNN
+F 1 "+10V" H 2515 1473 50  0000 C CNN
+F 2 "" H 2500 1300 50  0001 C CNN
+F 3 "" H 2500 1300 50  0001 C CNN
+	1    2500 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+10V #PWR09
+U 1 1 61E1CCB5
+P 3650 1300
+F 0 "#PWR09" H 3650 1150 50  0001 C CNN
+F 1 "+10V" H 3665 1473 50  0000 C CNN
+F 2 "" H 3650 1300 50  0001 C CNN
+F 3 "" H 3650 1300 50  0001 C CNN
+	1    3650 1300
+	1    0    0    -1  
+$EndComp
+Text GLabel 1450 3150 0    50   Input ~ 0
+AIN1
+Text GLabel 1450 3050 0    50   Input ~ 0
+AIN2
+NoConn ~ 1450 4050
+Wire Notes Line
+	1000 5500 3000 5500
+Text GLabel 2450 3850 2    50   Input ~ 0
+CHANNEL_2
+Text GLabel 2450 3750 2    50   Input ~ 0
+CHANNEL_1
+$Comp
+L MCU_Module:Adafruit_Feather_328P A1
+U 1 1 61D69E86
+P 1950 3850
+F 0 "A1" H 1600 5000 50  0000 C CNN
+F 1 "Feather 328P" H 2200 2600 40  0000 C CNN
+F 2 "Module:Adafruit_Feather" H 2050 2500 50  0001 L CNN
+F 3 "https://cdn-learn.adafruit.com/downloads/pdf/adafruit-feather.pdf" H 1950 3050 50  0001 C CNN
+	1    1950 3850
+	1    0    0    -1  
+$EndComp
+NoConn ~ 1450 3450
+Text GLabel 1450 3250 0    50   Input ~ 0
+BIN1
+Text GLabel 1450 3350 0    50   Input ~ 0
+BIN2
+$Comp
+L power:GND #PWR0101
+U 1 1 61D8BB98
+P 1950 5150
+F 0 "#PWR0101" H 1950 4900 50  0001 C CNN
+F 1 "GND" H 1955 4977 50  0000 C CNN
+F 2 "" H 1950 5150 50  0001 C CNN
+F 3 "" H 1950 5150 50  0001 C CNN
+	1    1950 5150
+	1    0    0    -1  
+$EndComp
+NoConn ~ 1850 2650
+NoConn ~ 2050 2650
+NoConn ~ 2150 2650
+NoConn ~ 2450 3050
+NoConn ~ 2450 3350
+NoConn ~ 2450 3450
+NoConn ~ 1450 4350
+NoConn ~ 1450 4450
+NoConn ~ 1450 4650
+NoConn ~ 1450 4750
+NoConn ~ 1450 3650
+NoConn ~ 1450 3750
+NoConn ~ 1450 3950
+NoConn ~ 1450 4150
+NoConn ~ 2450 3650
+Wire Notes Line
+	5500 2000 4500 2000
+Wire Notes Line
+	5500 1000 5500 2000
+Wire Notes Line
+	4500 1000 4500 2000
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 61E14C56
+P 4700 1200
+F 0 "H1" H 4800 1249 50  0000 L CNN
+F 1 "M" H 4800 1158 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 4700 1200 50  0001 C CNN
+F 3 "~" H 4700 1200 50  0001 C CNN
+	1    4700 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 61E16060
+P 4700 1700
+F 0 "H2" H 4800 1749 50  0000 L CNN
+F 1 "M" H 4800 1658 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 4700 1700 50  0001 C CNN
+F 3 "~" H 4700 1700 50  0001 C CNN
+	1    4700 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H4
+U 1 1 61E16E7D
+P 5200 1700
+F 0 "H4" H 5300 1749 50  0000 L CNN
+F 1 "M" H 5300 1658 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 5200 1700 50  0001 C CNN
+F 3 "~" H 5200 1700 50  0001 C CNN
+	1    5200 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H3
+U 1 1 61E15C74
+P 5200 1200
+F 0 "H3" H 5300 1249 50  0000 L CNN
+F 1 "M" H 5300 1158 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 5200 1200 50  0001 C CNN
+F 3 "~" H 5200 1200 50  0001 C CNN
+	1    5200 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR012
+U 1 1 61E1C7A4
+P 4700 1300
+F 0 "#PWR012" H 4700 1050 50  0001 C CNN
+F 1 "GND" H 4850 1250 50  0000 C CNN
+F 2 "" H 4700 1300 50  0001 C CNN
+F 3 "" H 4700 1300 50  0001 C CNN
+	1    4700 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR014
+U 1 1 61E1CAD6
+P 5200 1300
+F 0 "#PWR014" H 5200 1050 50  0001 C CNN
+F 1 "GND" H 5350 1250 50  0000 C CNN
+F 2 "" H 5200 1300 50  0001 C CNN
+F 3 "" H 5200 1300 50  0001 C CNN
+	1    5200 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR013
+U 1 1 61E1CE19
+P 4700 1800
+F 0 "#PWR013" H 4700 1550 50  0001 C CNN
+F 1 "GND" H 4850 1750 50  0000 C CNN
+F 2 "" H 4700 1800 50  0001 C CNN
+F 3 "" H 4700 1800 50  0001 C CNN
+	1    4700 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR015
+U 1 1 61E1D168
+P 5200 1800
+F 0 "#PWR015" H 5200 1550 50  0001 C CNN
+F 1 "GND" H 5350 1750 50  0000 C CNN
+F 2 "" H 5200 1800 50  0001 C CNN
+F 3 "" H 5200 1800 50  0001 C CNN
+	1    5200 1800
+	1    0    0    -1  
+$EndComp
+Text GLabel 2450 4050 2    50   Input ~ 0
+CONFIG_L
+Text GLabel 2450 4150 2    50   Input ~ 0
+CONFIG_R
+Text GLabel 1450 3550 0    50   Input ~ 0
+BEEP
+Wire Notes Line
+	3500 4000 3500 2500
+$Comp
+L Device:LED D4
+U 1 1 61E813CC
+P 4500 3000
+F 0 "D4" V 4550 2900 50  0000 R CNN
+F 1 "ORANGE" V 4450 2900 40  0000 R CNN
+F 2 "LED_SMD:LED_1206_3216Metric" H 4500 3000 50  0001 C CNN
+F 3 "~" H 4500 3000 50  0001 C CNN
+	1    4500 3000
+	0    -1   -1   0   
+$EndComp
+Wire Notes Line
+	5500 2500 5500 4000
+Wire Notes Line
+	3500 2500 5500 2500
+Wire Notes Line
+	3500 4000 5500 4000
+$Comp
+L Device:R R2
+U 1 1 61E849FD
+P 4000 3300
+F 0 "R2" H 4070 3346 50  0000 L CNN
+F 1 "100" H 4070 3255 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 3930 3300 50  0001 C CNN
+F 3 "~" H 4000 3300 50  0001 C CNN
+	1    4000 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 61E85102
+P 4500 3300
+F 0 "R3" H 4570 3346 50  0000 L CNN
+F 1 "100" H 4570 3255 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 4430 3300 50  0001 C CNN
+F 3 "~" H 4500 3300 50  0001 C CNN
+	1    4500 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR017
+U 1 1 61E8595E
+P 4000 3450
+F 0 "#PWR017" H 4000 3200 50  0001 C CNN
+F 1 "GND" H 4005 3277 50  0000 C CNN
+F 2 "" H 4000 3450 50  0001 C CNN
+F 3 "" H 4000 3450 50  0001 C CNN
+	1    4000 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR018
+U 1 1 61E85D6D
+P 4500 3450
+F 0 "#PWR018" H 4500 3200 50  0001 C CNN
+F 1 "GND" H 4505 3277 50  0000 C CNN
+F 2 "" H 4500 3450 50  0001 C CNN
+F 3 "" H 4500 3450 50  0001 C CNN
+	1    4500 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR019
+U 1 1 61E86183
+P 5000 3450
+F 0 "#PWR019" H 5000 3200 50  0001 C CNN
+F 1 "GND" H 5005 3277 50  0000 C CNN
+F 2 "" H 5000 3450 50  0001 C CNN
+F 3 "" H 5000 3450 50  0001 C CNN
+	1    5000 3450
+	1    0    0    -1  
+$EndComp
+Text GLabel 4000 2850 0    50   Input ~ 0
+CONFIG_L
+Text GLabel 4500 2850 0    50   Input ~ 0
+CONFIG_R
+Text GLabel 5000 2850 0    50   Input ~ 0
+BEEP
+Wire Wire Line
+	5000 3050 5000 3450
+Connection ~ 7350 1550
+$Comp
+L power:+10V #PWR016
+U 1 1 61E1D60D
+P 7350 1550
+F 0 "#PWR016" H 7350 1400 50  0001 C CNN
+F 1 "+10V" V 7365 1678 50  0000 L CNN
+F 2 "" H 7350 1550 50  0001 C CNN
+F 3 "" H 7350 1550 50  0001 C CNN
+	1    7350 1550
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6350 1550
+$Comp
+L power:+10V #PWR011
+U 1 1 61E1D1B6
+P 6350 1550
+F 0 "#PWR011" H 6350 1400 50  0001 C CNN
+F 1 "+10V" V 6365 1678 50  0000 L CNN
+F 2 "" H 6350 1550 50  0001 C CNN
+F 3 "" H 6350 1550 50  0001 C CNN
+	1    6350 1550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Buggy_Components:Adafruit_DRV8871_Breakout A4
+U 1 1 61D32985
+P 6750 2900
+F 0 "A4" H 6600 3150 50  0000 L CNN
+F 1 "DRV8871" H 6600 2650 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 6650 2900 50  0001 C CNN
+F 3 "" H 6650 2900 50  0001 C CNN
+	1    6750 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Buggy_Components:Adafruit_DRV8871_Breakout A3
+U 1 1 61D314D6
+P 6750 2200
+F 0 "A3" H 6600 2450 50  0000 L CNN
+F 1 "DRV8871" H 6600 1950 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 6650 2200 50  0001 C CNN
+F 3 "" H 6650 2200 50  0001 C CNN
+	1    6750 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Buggy_Components:Adafruit_DRV8871_Breakout A2
+U 1 1 61D2F2F4
+P 6750 1500
+F 0 "A2" H 6600 1750 50  0000 L CNN
+F 1 "DRV8871" H 6600 1250 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 6650 1500 50  0001 C CNN
+F 3 "" H 6650 1500 50  0001 C CNN
+	1    6750 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 1350 6450 1350
+Wire Wire Line
+	6450 1350 6450 2050
+Wire Wire Line
+	6450 2050 6500 2050
+Wire Wire Line
+	6450 2050 6450 2750
+Wire Wire Line
+	6450 2750 6500 2750
+Connection ~ 6450 2050
+Wire Wire Line
+	6500 1450 6400 1450
+Wire Wire Line
+	6400 1450 6400 2150
+Wire Wire Line
+	6400 2150 6500 2150
+Wire Wire Line
+	6400 2150 6400 2850
+Wire Wire Line
+	6400 2850 6500 2850
+Connection ~ 6400 2150
+Wire Wire Line
+	6500 1550 6350 1550
+Wire Wire Line
+	6350 1550 6350 2250
+Wire Wire Line
+	6350 2950 6500 2950
+Wire Wire Line
+	6350 2250 6500 2250
+Connection ~ 6350 2250
+Wire Wire Line
+	6350 2250 6350 2950
+Wire Wire Line
+	6500 1650 6300 1650
+Wire Wire Line
+	6300 1650 6300 2350
+Wire Wire Line
+	6300 3050 6500 3050
+Wire Wire Line
+	6300 2350 6500 2350
+Connection ~ 6300 2350
+Wire Wire Line
+	6300 2350 6300 3050
+Text GLabel 6450 1350 0    50   Input ~ 0
+AIN1
+Text GLabel 6400 1450 0    50   Input ~ 0
+AIN2
+$Comp
+L Buggy_Components:Adafruit_DRV8871_Breakout A7
+U 1 1 61D8E1C3
+P 7750 2900
+F 0 "A7" H 7600 3150 50  0000 L CNN
+F 1 "DRV8871" H 7600 2650 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 7650 2900 50  0001 C CNN
+F 3 "" H 7650 2900 50  0001 C CNN
+	1    7750 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Buggy_Components:Adafruit_DRV8871_Breakout A6
+U 1 1 61D8E1C9
+P 7750 2200
+F 0 "A6" H 7600 2450 50  0000 L CNN
+F 1 "DRV8871" H 7600 1950 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 7650 2200 50  0001 C CNN
+F 3 "" H 7650 2200 50  0001 C CNN
+	1    7750 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Buggy_Components:Adafruit_DRV8871_Breakout A5
+U 1 1 61D8E1CF
+P 7750 1500
+F 0 "A5" H 7600 1750 50  0000 L CNN
+F 1 "DRV8871" H 7600 1250 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 7650 1500 50  0001 C CNN
+F 3 "" H 7650 1500 50  0001 C CNN
+	1    7750 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 1350 7450 1350
+Wire Wire Line
+	7450 1350 7450 2050
+Wire Wire Line
+	7450 2050 7500 2050
+Wire Wire Line
+	7450 2050 7450 2750
+Wire Wire Line
+	7450 2750 7500 2750
+Connection ~ 7450 2050
+Wire Wire Line
+	7500 1450 7400 1450
+Wire Wire Line
+	7400 1450 7400 2150
+Wire Wire Line
+	7400 2150 7500 2150
+Wire Wire Line
+	7400 2150 7400 2850
+Wire Wire Line
+	7400 2850 7500 2850
+Connection ~ 7400 2150
+Wire Wire Line
+	7500 1550 7350 1550
+Wire Wire Line
+	7350 1550 7350 2250
+Wire Wire Line
+	7350 2950 7500 2950
+Wire Wire Line
+	7350 2250 7500 2250
+Connection ~ 7350 2250
+Wire Wire Line
+	7350 2250 7350 2950
+Wire Wire Line
+	7500 1650 7300 1650
+Wire Wire Line
+	7300 1650 7300 2350
+Wire Wire Line
+	7300 3050 7500 3050
+Wire Wire Line
+	7300 2350 7500 2350
+Connection ~ 7300 2350
+Wire Wire Line
+	7300 2350 7300 3050
+Text GLabel 7450 1350 0    50   Input ~ 0
+BIN1
+Text GLabel 7400 1450 0    50   Input ~ 0
+BIN2
+$Comp
+L power:GND #PWR03
+U 1 1 61D3A90D
+P 6300 3200
+F 0 "#PWR03" H 6300 2950 50  0001 C CNN
+F 1 "GND" H 6305 3027 50  0000 C CNN
+F 2 "" H 6300 3200 50  0001 C CNN
+F 3 "" H 6300 3200 50  0001 C CNN
+	1    6300 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 61D3B442
+P 7300 3200
+F 0 "#PWR05" H 7300 2950 50  0001 C CNN
+F 1 "GND" H 7305 3027 50  0000 C CNN
+F 2 "" H 7300 3200 50  0001 C CNN
+F 3 "" H 7300 3200 50  0001 C CNN
+	1    7300 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 3050 6300 3200
+Connection ~ 6300 3050
+Wire Wire Line
+	7300 3050 7300 3200
+Connection ~ 7300 3050
+Text Notes 3500 2450 0    75   ~ 0
+Debugging
+Text GLabel 2450 3950 2    50   Input ~ 0
+CHANNEL_3
+$Comp
+L Device:LED D2
+U 1 1 61E80BC8
+P 4000 3000
+F 0 "D2" V 4050 2900 50  0000 R CNN
+F 1 "ORANGE" V 3950 2900 40  0000 R CNN
+F 2 "LED_SMD:LED_1206_3216Metric" H 4000 3000 50  0001 C CNN
+F 3 "~" H 4000 3000 50  0001 C CNN
+	1    4000 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:Buzzer BZ1
+U 1 1 61E818D3
+P 5100 2950
+F 0 "BZ1" H 5252 2979 50  0000 L CNN
+F 1 "BEEP" H 5252 2888 50  0000 L CNN
+F 2 "Buzzer_Beeper:Buzzer_12x9.5RM7.6" V 5075 3050 50  0001 C CNN
+F 3 "~" V 5075 3050 50  0001 C CNN
+	1    5100 2950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

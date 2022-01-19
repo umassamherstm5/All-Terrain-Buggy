@@ -13,11 +13,13 @@
  * We connect this receiver to our Feather 328P and read the pulses on different channels using the pulseIn function. 
  * CHANNEL_1 refers to the left joystick's vertical motion. 
  * CHANNEL_2 refers to the right joystick's horizontal motion. 
+ * CHANNEL_3 refers to the right pot 
  */
 
 /* pin assignments for FlySky receiver signals */
 #define CHANNEL_1 A1 // channel 1 of the controller
 #define CHANNEL_2 A2 // channel 2 of the controller
+#define CHANNEL_3 A3 // channel 3 of the controller 
 
 /*
  * DRV8871 Motor Driver 
@@ -77,11 +79,17 @@
 /* variables for incoming pulse widths from CHANNEL_1 and CHANNEL_2 respectively */
 int sig1 = 0; // CHANNEL_1 value
 int sig2 = 0; // CHANNEL_2 value
+int beep = 0; // to BEEP or not
 
 /* variables for speed of either side */
 int a_speed = 0; // speed of right side
 int b_speed = 0; // speed of left side
 int offset  = 0; // speed difference for turning
+
+/* pins for debugging and BEEP */
+#define BEEP 3
+#define CONFIG_L A6
+#define CONFIG_R A7
 
 /*
  * Function: setup
@@ -102,6 +110,11 @@ void setup() {
   pinMode(BIN1, OUTPUT); 
   pinMode(BIN2, OUTPUT); 
 
+  // set debugging pins to OUTPUT
+  pinMode(BEEP, OUTPUT);
+  pinMode(CONFIG_L, OUTPUT);
+  pinMode(CONFIG_R, OUTPUT);
+
   Serial.begin(9600); // start serial port 
 }
 
@@ -117,6 +130,12 @@ void loop() {
   // get signal values from receiver 
   sig1 = pulseIn(CHANNEL_1, HIGH);
   sig2 = pulseIn(CHANNEL_2, HIGH);
+
+  // generate beep 
+  if(beep == 1) tone(BEEP, 1000);
+
+  // check if car is configured correctly 
+  if(sig1 < SIG_LOW_ACC || sig1 > SIG_HIGH_ACC) digitalWrite(CONFIG_L, HIGH);
 
   if(DEBUG == 1) {
     // print signal values
