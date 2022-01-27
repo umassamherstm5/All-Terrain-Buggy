@@ -25,7 +25,7 @@
  * DRV8871 Motor Driver 
  * --------------------
  * The DRV8871 is a brushed DC motor driver. Two logic inputs control 4 N-channel MOFSETs for bidirectional control. 
- * The inputs can be either HIGH/LOW or PWM (we use PWM) to control motor speed and direction. 
+ * The inputs can be either HIGH/LOW or PWM (we use PWM and LOW) to control motor speed and direction. 
  * Setting both inputs to LOW activates a low-power deep sleep mode. This will help us conserve battery life. 
  * 
  * For ease of control, we connect each of the 3 motors on either side of the buggy together. 
