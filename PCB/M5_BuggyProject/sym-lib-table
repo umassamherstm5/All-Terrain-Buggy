@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name Buggy_Components)(type Legacy)(uri ${KIPRJMOD}/Libraries/Buggy_Components/Buggy_Components.lib)(options "")(descr "Custom symbols used in this project, DRV8871"))
+  (lib (name M5_BuggyProject-rescue)(type Legacy)(uri ${KIPRJMOD}/M5_BuggyProject-rescue.lib)(options "")(descr ""))
 )
