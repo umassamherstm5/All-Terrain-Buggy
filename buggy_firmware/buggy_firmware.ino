@@ -134,8 +134,11 @@ void loop() {
   // generate beep 
   if(beep == 1) tone(BEEP, 1000);
 
-  // check if car is configured correctly 
+  // check if car is configured correctly, LEDs on if signals not in deadzone
   if(sig1 < SIG_LOW_ACC || sig1 > SIG_HIGH_ACC) digitalWrite(CONFIG_L, HIGH);
+  else digitalWrite(CONFIG_L, LOW); 
+  if(sig2 < SIG_LOW_STEER || sig2 > SIG_HIGH_STEER) digitalWrite(CONFIG_R, HIGH);  
+  else digitalWrite(CONFIG_R, LOW); 
 
   if(DEBUG == 1) {
     // print signal values
