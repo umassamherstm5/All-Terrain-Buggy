@@ -412,9 +412,9 @@ F 3 "" H 5200 1800 50  0001 C CNN
 	1    5200 1800
 	1    0    0    -1  
 $EndComp
-Text GLabel 2450 4150 2    50   Input ~ 0
-CONFIG_L
 Text GLabel 2450 4250 2    50   Input ~ 0
+CONFIG_L
+Text GLabel 2450 4150 2    50   Input ~ 0
 CONFIG_R
 Text GLabel 1450 3650 0    50   Input ~ 0
 BEEP
@@ -808,16 +808,5 @@ F 2 "" H 4700 4000 50  0001 C CNN
 F 3 "" H 4700 4000 50  0001 C CNN
 	1    4700 4000
 	0    -1   -1   0   
-$EndComp
-$Comp
-L Mechanical:MountingHole H?
-U 1 1 620461DC
-P 6700 4250
-F 0 "H?" H 6800 4296 50  0000 L CNN
-F 1 "MountingHole" H 6800 4205 50  0000 L CNN
-F 2 "" H 6700 4250 50  0001 C CNN
-F 3 "~" H 6700 4250 50  0001 C CNN
-	1    6700 4250
-	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

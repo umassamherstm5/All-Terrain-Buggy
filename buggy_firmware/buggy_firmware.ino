@@ -88,8 +88,8 @@ int offset  = 0; // speed difference for turning
 
 /* pins for debugging and BEEP */
 #define BEEP 3
-#define CONFIG_L A6
-#define CONFIG_R A7
+#define CONFIG_R A6
+#define CONFIG_L A7
 
 /*
  * Function: setup
@@ -130,6 +130,7 @@ void loop() {
   // get signal values from receiver 
   sig1 = pulseIn(CHANNEL_1, HIGH);
   sig2 = pulseIn(CHANNEL_2, HIGH);
+  beep = pulseIn(CHANNEL_3, HIGH);
 
   // generate beep 
   if(beep == 1) tone(BEEP, 1000);
