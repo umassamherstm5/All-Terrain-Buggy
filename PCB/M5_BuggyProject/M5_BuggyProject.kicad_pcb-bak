@@ -44,7 +44,7 @@
   )
 
   (setup
-    (last_trace_width 0.508)
+    (last_trace_width 0.254)
     (user_trace_width 0.508)
     (user_trace_width 0.762)
     (user_trace_width 1.27)
@@ -79,8 +79,8 @@
     (visible_elements 7FFFFFFF)
     (pcbplotparams
       (layerselection 0x010fc_ffffffff)
-      (usegerberextensions false)
-      (usegerberattributes true)
+      (usegerberextensions true)
+      (usegerberattributes false)
       (usegerberadvancedattributes true)
       (creategerberjobfile true)
       (excludeedgelayer true)
@@ -98,7 +98,7 @@
       (plotvalue true)
       (plotinvisibletext false)
       (padsonsilk false)
-      (subtractmaskfromsilk false)
+      (subtractmaskfromsilk true)
       (outputformat 5)
       (mirror false)
       (drillshape 0)
@@ -2228,7 +2228,7 @@
   (segment (start 85.575202 78.486) (end 91.925202 84.836) (width 0.508) (layer B.Cu) (net 32))
   (segment (start 83.058 78.486) (end 85.575202 78.486) (width 0.508) (layer B.Cu) (net 32))
 
-  (zone (net 23) (net_name +10V) (layer B.Cu) (tstamp 62032483) (hatch edge 0.508)
+  (zone (net 23) (net_name +10V) (layer B.Cu) (tstamp 620EC47B) (hatch edge 0.508)
     (connect_pads (clearance 0.508))
     (min_thickness 0.254)
     (fill yes (arc_segments 32) (thermal_gap 0.508) (thermal_bridge_width 0.508))
@@ -2662,7 +2662,7 @@
       )
     )
   )
-  (zone (net 8) (net_name GND) (layer F.Cu) (tstamp 62032480) (hatch edge 0.508)
+  (zone (net 8) (net_name GND) (layer F.Cu) (tstamp 620EC478) (hatch edge 0.508)
     (connect_pads (clearance 0.508))
     (min_thickness 0.254)
     (fill yes (arc_segments 32) (thermal_gap 0.508) (thermal_bridge_width 0.508))
