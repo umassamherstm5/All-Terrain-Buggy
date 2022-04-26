@@ -1,6 +1,5 @@
 /*
  * All-Terrain Buggy
- * M5 Demonstration 
  * Firmware for interfacing with buggy and remote control 
  * Authors: Akshat Sahay, Chris Caron, Sebastian Armstrong 
  */
@@ -17,9 +16,9 @@
  */
 
 /* pin assignments for FlySky receiver signals */
-#define CHANNEL_1 A1 // channel 1 of the controller
-#define CHANNEL_2 A2 // channel 2 of the controller
-#define CHANNEL_3 A3 // channel 3 of the controller 
+#define CHANNEL_1 A1 // controller CH2  
+#define CHANNEL_2 A2 // controller CH4
+#define CHANNEL_3 A3
 
 /*
  * DRV8871 Motor Driver 
@@ -67,12 +66,18 @@
  * but the forward and backward motion is controlled within these conditions. 
 */
 
-/* thresholds for signal values, used in loop */
+/* thresholds for signal values, used for identifying action and speed */
 #define SIG_HIGH_ACC 1490
 #define SIG_LOW_ACC 1410
 
 #define SIG_HIGH_STEER 1515
 #define SIG_LOW_STEER 1435
+
+#define SIG_MAX_ACC 1850
+#define SIG_MIN_ACC 1050
+
+#define SIG_MAX_STEER 1950
+#define SIG_MIN_STEER 1050
 
 #define DEBUG 0  // print signal values
 
@@ -115,7 +120,8 @@ void setup() {
   pinMode(CONFIG_L, OUTPUT);
   pinMode(CONFIG_R, OUTPUT);
 
-  Serial.begin(9600); // start serial port 
+  // start serial port
+  Serial.begin(9600);  
 }
 
 /*
@@ -130,16 +136,6 @@ void loop() {
   // get signal values from receiver 
   sig1 = pulseIn(CHANNEL_1, HIGH);
   sig2 = pulseIn(CHANNEL_2, HIGH);
-  beep = pulseIn(CHANNEL_3, HIGH);
-
-  // generate beep 
-  if(beep == 1) tone(BEEP, 1000);
-
-  // check if car is configured correctly, LEDs on if signals not in deadzone
-  if(sig1 < SIG_LOW_ACC || sig1 > SIG_HIGH_ACC) digitalWrite(CONFIG_L, HIGH);
-  else digitalWrite(CONFIG_L, LOW); 
-  if(sig2 < SIG_LOW_STEER || sig2 > SIG_HIGH_STEER) digitalWrite(CONFIG_R, HIGH);  
-  else digitalWrite(CONFIG_R, LOW); 
 
   if(DEBUG == 1) {
     // print signal values
@@ -164,11 +160,11 @@ void loop() {
     Serial.println("FORWARD"); 
 
     // limit sig1 values for speed
-    if(sig1 > 1850) sig1 = 1850; 
+    if(sig1 > SIG_MAX_ACC) sig1 = SIG_MAX_ACC; 
 
     // get speed proportional to sig1 in FORWARD state
     // the higher the sig1 val, the higher the speed
-    a_speed = map(sig1, SIG_HIGH_ACC, 1850, 0, 255);  
+    a_speed = map(sig1, SIG_HIGH_ACC, SIG_MAX_ACC, 0, 255);  
 
     // set drivers to FORWARD mode
     analogWrite(AIN1, a_speed);
@@ -182,11 +178,11 @@ void loop() {
     Serial.println("BACKWARD"); 
 
     // limit sig1 values for speed
-    if(sig1 < 1000) sig1 = 1000;
+    if(sig1 < SIG_MIN_ACC) sig1 = SIG_MIN_ACC;
 
     // get speed proportional to sig1 in BACKWARD state
     // the lower the sig1 val, the higher the speed
-    a_speed = map(sig1, SIG_LOW_ACC, 1000, 0, 255); 
+    a_speed = map(sig1, SIG_LOW_ACC, SIG_MIN_ACC, 0, 255); 
 
     // set driver to COUNTER-CLOCKWISE mode
     digitalWrite(AIN1, LOW);
@@ -203,12 +199,12 @@ void loop() {
       Serial.println("FORWARD");  
 
       // limit sig1 values for speed
-      if(sig1 > 1850) sig1 = 1850; 
+      if(sig1 > SIG_MAX_ACC) sig1 = SIG_MAX_ACC; 
       // limit sig2 values for speed
-      if(sig2 < 1000) sig2 = 1000;
+      if(sig2 < SIG_MIN_STEER) sig2 = SIG_MIN_STEER;
   
-      b_speed = map(sig1, SIG_HIGH_ACC, 1850, 0, 255); 
-      offset  = map(sig2, SIG_LOW_STEER, 1000, 0, b_speed/2); 
+      b_speed = map(sig1, SIG_HIGH_ACC, SIG_MAX_ACC, 0, 255); 
+      offset  = map(sig2, SIG_LOW_STEER, SIG_MIN_STEER, 0, b_speed/2); 
       // to go RIGHT, left side faster than right side 
       a_speed = b_speed - offset; 
       
@@ -223,12 +219,12 @@ void loop() {
       Serial.println("BACKWARD"); 
 
       // limit sig1 values for speed
-      if(sig1 < 1000) sig1 = 1000;
+      if(sig1 < SIG_MIN_ACC) sig1 = SIG_MIN_ACC;
       // limit sig2 values for speed
-      if(sig2 < 1000) sig2 = 1000;
+      if(sig2 < SIG_MIN_STEER) sig2 = SIG_MIN_STEER;
   
-      b_speed = map(sig1, SIG_LOW_ACC, 1000, 0, 255); 
-      offset  = map(sig2, SIG_LOW_STEER, 1000, 0, b_speed/2);
+      b_speed = map(sig1, SIG_LOW_ACC, SIG_MIN_ACC, 0, 255); 
+      offset  = map(sig2, SIG_LOW_STEER, SIG_MIN_STEER, 0, b_speed/2);
       // to go RIGHT, left side faster than right side 
       a_speed = b_speed - offset; 
       
@@ -243,9 +239,9 @@ void loop() {
       Serial.println("SPIN");
 
       // limit sig2 values for speed 
-      if(sig2 < 1000) sig2 = 1000; 
+      if(sig2 < SIG_MIN_STEER) sig2 = SIG_MIN_STEER; 
       // speed dependent solely on sig2 value
-      a_speed = map(sig2, SIG_LOW_STEER, 1000, 0, 255);
+      a_speed = map(sig2, SIG_LOW_STEER, SIG_MIN_STEER, 0, 255);
 
       // set driver to SPIN, both sides move opposite dirs
       digitalWrite(AIN1, LOW);
@@ -263,12 +259,12 @@ void loop() {
       Serial.println("FORWARD"); 
 
       // limit sig1 values for speed
-      if(sig1 > 1850) sig1 = 1850; 
+      if(sig1 > SIG_MAX_ACC) sig1 = SIG_MAX_ACC; 
       // limit sig1 values for speed
-      if(sig2 > 1950) sig2 = 1950; 
+      if(sig2 > SIG_MAX_STEER) sig2 = SIG_MAX_STEER; 
 
-      a_speed = map(sig1, SIG_HIGH_ACC, 1850, 0, 255); 
-      offset  = map(sig2, SIG_HIGH_STEER, 1950, 0, a_speed/2); 
+      a_speed = map(sig1, SIG_HIGH_ACC, SIG_MAX_ACC, 0, 255); 
+      offset  = map(sig2, SIG_HIGH_STEER, SIG_MAX_STEER, 0, a_speed/2); 
       // to go LEFT, right side faster than left
       b_speed = a_speed - offset; 
       
@@ -283,12 +279,12 @@ void loop() {
       Serial.println("BACKWARD"); 
 
       // limit sig1 values for speed
-      if(sig1 < 1000) sig1 = 1000;
+      if(sig1 < SIG_MIN_ACC) sig1 = SIG_MIN_ACC;
       // limit sig1 values for speed
-      if(sig2 > 1950) sig2 = 1950; 
+      if(sig2 > SIG_MAX_STEER) sig2 = SIG_MAX_STEER; 
   
-      a_speed = map(sig1, SIG_LOW_ACC, 1000, 0, 255); 
-      offset  = map(sig2, SIG_HIGH_STEER, 1950, 0, a_speed/2); 
+      a_speed = map(sig1, SIG_LOW_ACC, SIG_MIN_ACC, 0, 255); 
+      offset  = map(sig2, SIG_HIGH_STEER, SIG_MAX_STEER, 0, a_speed/2); 
       // to go LEFT, right side faster than left
       b_speed = a_speed - offset; 
        
@@ -303,9 +299,9 @@ void loop() {
       Serial.println("SPIN");
 
       // limit sig2 values for speed 
-      if(sig2 > 1950) sig2 = 1950; 
+      if(sig2 > SIG_MAX_STEER) sig2 = SIG_MAX_STEER; 
       // speed dependent solely on sig2 value
-      a_speed = map(sig2, SIG_HIGH_STEER, 1950, 0, 255);
+      a_speed = map(sig2, SIG_HIGH_STEER, SIG_MAX_STEER, 0, 255);
 
       // set driver to SPIN, both sides move opposite dirs
       analogWrite(AIN1, a_speed);
