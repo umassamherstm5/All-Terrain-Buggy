@@ -74,12 +74,12 @@
 #define SIG_LOW_STEER 1435
 
 #define SIG_MAX_ACC 1850
-#define SIG_MIN_ACC 1050
+#define SIG_MIN_ACC 1100
 
 #define SIG_MAX_STEER 1950
 #define SIG_MIN_STEER 1050
 
-#define DEBUG 0  // print signal values
+#define DEBUG 1  
 
 /* variables for incoming pulse widths from CHANNEL_1 and CHANNEL_2 respectively */
 int sig1 = 0; // CHANNEL_1 value
@@ -139,6 +139,7 @@ void loop() {
 
   if(DEBUG == 1) {
     // print signal values
+    Serial.print("Signals: "); 
     Serial.print(sig1);
     Serial.print(" ");
     Serial.println(sig2);    
@@ -320,5 +321,12 @@ void loop() {
     digitalWrite(AIN2, LOW); 
     digitalWrite(BIN1, LOW);
     digitalWrite(BIN2, LOW);
+  }
+
+  if(DEBUG == 1) {
+    Serial.print("Speeds: ");  
+    Serial.print(a_speed);
+    Serial.print(" "); 
+    Serial.println(b_speed);  
   }
 }
