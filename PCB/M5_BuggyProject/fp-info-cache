@@ -1,4 +1,4 @@
-19216096247144386
+19433601371159373
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -50791,6 +50791,13 @@ M5_logo
 0
 0
 0
+Figures
+UMass_logo
+
+
+0
+0
+0
 Filter
 Filter_1109-5_1.1x0.9mm
 5-pin SAW filter package - 1.1x0.9 mm Body; (see https://www.murata.com/~/media/webrenewal/support/library/catalog/products/filter/rf/p73e.ashx?la=en-gb)
@@ -56231,6 +56238,90 @@ A20 Olimex Olinuxino LIME2 development board
 180
 180
 Module
+Adafruit_Feather
+Common footprint for the Adafruit Feather series of boards, https://learn.adafruit.com/adafruit-feather/feather-specification
+Adafruit Feather
+0
+28
+28
+Module
+Adafruit_Feather_32u4_FONA
+Footprint for the Adafruit Feather 32u4 FONA board, https://learn.adafruit.com/adafruit-feather-32u4-fona
+Adafruit Feather 32u4 FONA
+0
+28
+28
+Module
+Adafruit_Feather_32u4_FONA_WithMountingHoles
+Footprint for the Adafruit Feather 32u4 FONA board, https://learn.adafruit.com/adafruit-feather-32u4-fona
+Adafruit Feather 32u4 FONA
+0
+28
+28
+Module
+Adafruit_Feather_32u4_RFM
+Footprint for the Adafruit Feather 32u4 RFM series of boards, https://learn.adafruit.com/adafruit-feather-32u4-radio-with-rfm69hcw-module
+Adafruit Feather 32u4 RFM
+0
+31
+31
+Module
+Adafruit_Feather_32u4_RFM_WithMountingHoles
+Footprint for the Adafruit Feather 32u4 RFM series of boards, https://learn.adafruit.com/adafruit-feather-32u4-radio-with-rfm69hcw-module
+Adafruit Feather 32u4 RFM
+0
+31
+31
+Module
+Adafruit_Feather_M0_RFM
+Footprint for the Adafruit Feather M0 RFM series of boards, e.g. https://learn.adafruit.com/adafruit-feather-m0-radio-with-rfm69-packet-radio
+Adafruit Feather M0 RFM
+0
+32
+32
+Module
+Adafruit_Feather_M0_RFM_WithMountingHoles
+Footprint for the Adafruit Feather M0 RFM series of boards, e.g. https://learn.adafruit.com/adafruit-feather-m0-radio-with-rfm69-packet-radio
+ Adafruit Feather M0 RFM
+0
+32
+32
+Module
+Adafruit_Feather_M0_Wifi
+Footprint for the Adafruit Feather M0 Wifi board, https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/
+Adafruit Feather M0 Wifi
+0
+28
+28
+Module
+Adafruit_Feather_M0_Wifi_WithMountingHoles
+Footprint for the Adafruit Feather M0 Wifi board, https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/
+Adafruit Feather M0 Wifi
+0
+28
+28
+Module
+Adafruit_Feather_WICED
+Footprint for the Adafruit Feather WICED Wifi board, https://learn.adafruit.com/introducing-the-adafruit-wiced-feather-wifi
+Adafruit Feather WICED Wifi
+0
+29
+29
+Module
+Adafruit_Feather_WICED_WithMountingHoles
+Footprint for the Adafruit Feather WICED Wifi board, https://learn.adafruit.com/introducing-the-adafruit-wiced-feather-wifi
+Adafruit Feather WICED Wifi
+0
+29
+29
+Module
+Adafruit_Feather_WithMountingHoles
+Common footprint for the Adafruit Feather series of boards, https://learn.adafruit.com/adafruit-feather/feather-specification
+Adafruit Feather
+0
+28
+28
+Module
 Adafruit_HUZZAH_ESP8266_breakout
 32-bit microcontroller module with WiFi, https://www.adafruit.com/product/2471
 ESP8266 WiFi microcontroller
@@ -56294,6 +56385,13 @@ PocketBeagle
 72
 72
 Module
+Carambola2
+8devices Carambola2, OpenWRT, industrial SoM computer, https://www.8devices.com/media/products/carambola2/downloads/carambola2-datasheet.pdf
+carambola2 8devices
+0
+104
+52
+Module
 Maple_Mini
 Maple Mini, http://docs.leaflabs.com/static.leaflabs.com/pub/leaflabs/maple-docs/0.0.12/hardware/maple-mini.html
 Maple Mini
@@ -56342,6 +56440,13 @@ ST Morpho Connector 144 STLink
 0
 148
 148
+Module
+Sipeed-M1
+AI accelerated MCU with optional wifi, https://dl.sipeed.com/MAIX/HDK/Sipeed-M1&M1W/Specifications
+AI Kendryte K210 RISC-V
+0
+85
+77
 Module
 Texas_EUK_R-PDSS-T7_THT
 Texas Instruments EUK 7 Pin Double Sided Module
