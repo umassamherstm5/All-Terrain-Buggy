@@ -1,3 +1,7 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 1N5231BTR-dk_Diodes-Zener-Single
+F https://www.onsemi.com/pub/Collateral/1N5221B-D.PDF
+$ENDCMP
+#
 #End Doc Library

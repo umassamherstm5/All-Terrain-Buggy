@@ -18,7 +18,7 @@
 /* pin assignments for FlySky receiver signals */
 #define CHANNEL_1 A1 // controller CH2  
 #define CHANNEL_2 A2 // controller CH4
-#define CHANNEL_3 A3
+#define CHANNEL_3 A3 // controller flipswitch L
 
 /*
  * DRV8871 Motor Driver 
